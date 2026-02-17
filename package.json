@@ -23,6 +23,7 @@
   ],
   "scripts": {
     "build": "npx tsc",
+    "build:packages": "npm run build -w @usewaypoint/document-core -w @usewaypoint/block-avatar -w @usewaypoint/block-button -w @usewaypoint/block-columns-container -w @usewaypoint/block-container -w @usewaypoint/block-divider -w @usewaypoint/block-heading -w @usewaypoint/block-html -w @usewaypoint/block-image -w @usewaypoint/block-spacer -w @usewaypoint/block-text -w @usewaypoint/email-builder",
     "test": "npx jest"
   },
   "author": "carlos@usewaypoint.com",
