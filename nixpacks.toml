@@ -1,0 +1,14 @@
+# Nixpacks config for email-builder-js monorepo
+# Ensures tsup is on PATH when workspace packages run their build scripts
+
+[variables]
+# Ensure devDependencies (tsup) are installed - Coolify may override Nixpacks defaults
+NPM_CONFIG_PRODUCTION = false
+
+[phases.build]
+# Prepend node_modules/.bin to PATH so tsup is found when workspace packages run their build
+cmds = ["export PATH=\"$PWD/node_modules/.bin:$PATH\" && npm run build:packages && cd examples/vite-emailbuilder-mui && npm run build"]
+
+[start]
+# Serve the built Vite static files
+cmd = "npx serve examples/vite-emailbuilder-mui/dist -s -l 3000"
