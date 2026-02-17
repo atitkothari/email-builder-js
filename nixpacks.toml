@@ -3,7 +3,7 @@
 
 [variables]
 # Ensure devDependencies (tsup) are installed - Coolify may override Nixpacks defaults
-NPM_CONFIG_PRODUCTION = false
+NPM_CONFIG_PRODUCTION = "false"
 
 [phases.build]
 # Prepend node_modules/.bin to PATH so tsup is found when workspace packages run their build
